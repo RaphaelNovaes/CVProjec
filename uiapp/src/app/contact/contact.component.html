@@ -1,0 +1,93 @@
+<div
+  class="d-flex bg-dark text-white flex-row justify-content-center pt-5"
+  style="
+    min-height: 100vh;
+    background-image: url('/assets/images/contactme-bg.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+  "
+>
+  <form
+    [formGroup]="contactForm"
+    style="width: 36rem"
+    (ngSubmit)="subContactForm()"
+  >
+    <legend class="text-center">Contact Me</legend>
+    <div class="mb-3">
+      <label for="name" class="form-label">Your Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        required
+        formControlName="name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        required
+        formControlName="email"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="desc" class="form-label">Brief description</label>
+      <textarea
+        class="form-control form-control-lg"
+        id="desc"
+        rows="3"
+        required
+        formControlName="desc"
+      ></textarea>
+    </div>
+    <button
+      type="submit"
+      class="btn"
+      style="background-color: #e4b534"
+      [disabled]="!contactForm.valid"
+    >
+      Submit
+    </button>
+    <div
+      *ngIf="
+        contactForm.get('name')?.errors && contactForm.get('name')?.touched
+      "
+      class="alert alert-danger mt-2"
+    >
+      Name is required.
+    </div>
+    <div
+      *ngIf="
+        contactForm.get('email')?.invalid && contactForm.get('email')?.touched
+      "
+      class="alert alert-danger mt-2"
+    >
+      <div *ngIf="contactForm.get('email')?.errors?.['required']">
+        Email is required.
+      </div>
+      <div *ngIf="contactForm.get('email')?.errors?.['email']">
+        Email must be valid.
+      </div>
+    </div>
+    <div
+      *ngIf="
+        contactForm.get('desc')?.errors && contactForm.get('desc')?.touched
+      "
+      class="alert alert-danger mt-2"
+    >
+      Desciption is required.
+    </div>
+    <div *ngIf="messageSent" class="alert alert-success mt-2">
+      Message was sent !
+    </div>
+    <div *ngIf="messageError" class="alert alert-danger mt-2">
+      An error ocurred, try again later !
+    </div>
+  </form>
+</div>

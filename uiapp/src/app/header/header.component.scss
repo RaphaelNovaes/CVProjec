@@ -1,0 +1,13 @@
+.navbar-dark {
+    --bs-navbar-active-color: #e4b534;
+}
+
+.active {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 2px;
+}
+
+.bd-navbar {
+    padding: var(--bs-navbar-padding-y) var(--bs-navbar-brand-margin-end);
+}

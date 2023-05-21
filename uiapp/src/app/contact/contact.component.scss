@@ -1,0 +1,23 @@
+input,
+textarea,
+select {
+    background-color: #212529;
+    color : #fff;
+    opacity: 0.9;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #daba06;
+    background-color: #575a5e;
+    color : #fff;
+}
+
+label {
+    text-shadow: #a3a3a3 2px 2px 2px;;
+}
+
+.alert {
+    opacity: 0.7;
+}

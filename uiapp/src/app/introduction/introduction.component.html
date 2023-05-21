@@ -1,0 +1,31 @@
+<div
+  class="d-flex bg-dark flex-dmd-column flex-md-row align-items-dmd-center"
+  style="
+    min-height: 100vh;
+    background-image: url('/assets/images/introduction-bg.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  "
+>
+  <div
+    class="d-sm-flex position-dmd-none w-dmd-100 float-md-end position-absolute photo "
+  ></div>
+  <div
+    class="d-sm-flex position-dxl-none ms-dmd-0 ms-dxl-50 float-md-end position-absolute description"
+  >
+    <pre
+      [innerHTML]="typeWriterContent"
+      [class.cursor-blinking]="cursorOn"
+    ></pre>
+  </div>
+  <div class="d-sm-flex position-dmd-none position-absolute main-title">
+    <p class="text-white" style="font-size: 30px; font-weight: 400">
+      <span style="color: white">Hello</span>, I'm
+      <span style="color: #e4b534">Raphael Novaes</span>,
+      <span style="color: white">Back-end Developer</span>, based in Los
+      Angeles, CA
+    </p>
+  </div>
+</div>
