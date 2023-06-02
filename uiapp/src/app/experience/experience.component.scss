@@ -1,32 +1,165 @@
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Press+Start+2P&display=swap");
 
-.mylinks {
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+.contact-link {
+    ::ng-deep {
+        a {
+            text-decoration: none;
+            color: #e4b534;
+        }
+        a:hover {
+            color: #e4b534;
+            text-decoration: underline;
+            text-underline-offset: 8px;
+            text-decoration-thickness: 2px;
+        }
+    }
+}
+
+.mylinks-container {
+    float: right;
+    position: fixed;
+    bottom: 7%;
+    right: 0%;
+}
+
+.mylinks-text {
+    align-self: center;
+}
+
+.mylinks-text p {
+    word-break: break-all;
+    width: 10px;
+    padding: 0px 1px;
+    font-family: Inconsolata;
+    font-size: 1rem;
+    white-space: break-spaces;
+}
+
+.mylinks-bar {
+    padding: 10px 0px;
+    align-self: center;
+}
+
+.mylinks-btn-container {
+    padding: 0px 10px;
+    align-self: center;
+}
+
+.mylinks-btn {
     background-position: center;
-    background-size: 80px 80px;
+    background-size: 40px 40px;
     background-repeat: no-repeat;
     background-attachment: initial;
-    background-color: white;
-    border-radius: 70px;
-    border: 2px solid rgb(99, 99, 99);
-    margin-right: 20px;
-    height: 80px;
-    width: 80px;
+    background-color: #fff;
+    opacity: 0.8;
+    border-radius: 40px;
+    border-bottom: 2px solid rgb(84, 72, 11);
+    border-right: 2px solid rgb(84, 72, 11);
+    margin: 10px;
+    height: 40px;
+    width: 40px;
+    text-align: revert;
 }
 
-.mylinks:hover {
-    margin-bottom: 10px !important;
-    box-shadow: 0px 0px 0px 2px #e4b534 inset;
+.mylinks-btn:hover {
+    transform: scaleX(1.5) scaleY(1.5);
+    box-shadow: 0px 0px 0px 1px #e4b534 inset;
 }
 
-.companies-links {
+.companies-btn {
     width: 40px;
     height: 40px;
     min-width: 30px;
     background-color: rgb(0, 0, 0);
     border-radius: 10px;
-    margin-right: 20px;
+    margin: 4px;
 }
 
-.companies-links:hover {
-    margin-bottom: 10px !important;
+.companies-btn:hover {
+    transform: scaleX(1.5) scaleY(1.5);
+}
+
+.title-animation {
+    word-wrap: break-word;
+    animation-name: leftSlide;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+@include media-breakpoint-down(md) {
+    .mylinks-container-dmd {
+        float: unset;
+        position:unset;
+    }
+
+    .mylinks-text-dmd {
+        float: none;
+        position: unset;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .mylinks-text-dmd p {
+        width: 100%;
+        padding: 0px;
+        letter-spacing: normal;
+        white-space: normal;
+        font-size: 1.1rem;
+    }
+
+    .mylinks-bar-dmd {
+        float: none;
+        position: unset;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 5px 45px;
+    }
+
+    .mylinks-bar-dmd div {
+        max-height: 2px;
+        min-width: 70px;
+    }
+
+    .mylinks-btn-container-dmd {
+        float: none;
+        position: unset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0px;
+    }
+
+    .mylinks-btn-container-dmd a div {
+        margin: 5px;
+    }
+}
+
+@keyframes leftSlide {
+    100% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.5;
+    }
+    0% {
+        opacity: 0.1;
+    }
 }

@@ -1,4 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
-:root {
-    --bs-dark-rgb: 0, 0, 0!important
+html,
+body,
+app-root {
+    height: 100vh;
+    background-color: black;
+    scroll-behavior: smooth;
 }
+
+:root {
+    --bs-dark-rgb: 0, 0, 0 !important;
+}
+
+//Debug CSS
+// * {
+//     background: #000 !important;
+//     color: #0f0 !important;
+//     outline: solid #f00 1px !important;
+//   }

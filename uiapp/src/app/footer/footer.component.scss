@@ -1,0 +1,45 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+.footer {
+    display: flex;
+    vertical-align: middle;
+    background-image: linear-gradient(to top, #1e1e1e, #101010) !important;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.contact {
+    width: fit-content;
+    height: 0px;
+    padding-left: 1%;
+    color: rgb(190, 183, 183);
+    position: relative;
+    bottom: 55px;
+    font-size: 13px;
+    text-align: left;
+}
+
+.contact p a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact p a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+@include media-breakpoint-down(md) {
+    .contact-dmd {
+        display: contents;
+        padding-bottom: 12px;
+        word-break: break-all;
+        text-align: center;
+        bottom: 65px;
+    }
+}

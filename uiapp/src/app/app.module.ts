@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClientModule,
+  HttpClientXsrfModule,
+} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +15,7 @@ import { EducationComponent } from './education/education.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
+import { CsrfInterceptor } from './http-interceptors/csrf-interceptor';
 
 @NgModule({
   declarations: [
@@ -20,16 +25,18 @@ import { ContactComponent } from './contact/contact.component';
     EducationComponent,
     HeaderComponent,
     FooterComponent,
-    ContactComponent
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    HttpClientXsrfModule
+    HttpClientXsrfModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    [{ provide: HTTP_INTERCEPTORS, useClass: CsrfInterceptor, multi: true }],
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

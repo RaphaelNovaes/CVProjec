@@ -7,7 +7,7 @@ import { EducationComponent } from './education/education.component';
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
-  {path:  "", pathMatch:  "full",redirectTo:  "introduction"},
+  {path: "", pathMatch:  "full",redirectTo:  "introduction"},
   {path: "introduction", component: IntroductionComponent},
   {path: "experience", component: ExperienceComponent},
   {path: "education", component: EducationComponent},  

@@ -1,8 +1,8 @@
 input,
 textarea,
 select {
-    background-color: #212529;
-    color : #fff;
+    background-color: #2c2c2c6e;
+    color: #fff;
     opacity: 0.9;
 }
 
@@ -10,14 +10,52 @@ input:focus,
 textarea:focus,
 select:focus {
     border-color: #daba06;
-    background-color: #575a5e;
-    color : #fff;
+    background-color: #5857576e;
+    color: #fff;
 }
 
-label {
-    text-shadow: #a3a3a3 2px 2px 2px;;
-}
-
-.alert {
+.alert-success {
     opacity: 0.7;
+    --bs-alert-color: #06bb66;
+    --bs-alert-bg: #002a17;
+    --bs-alert-border-color: #80ffc5;
+}
+
+.alert-danger {
+    opacity: 0.7;
+    --bs-alert-color: #ff4b4b;
+    --bs-alert-bg: #2c0004;
+    --bs-alert-border-color: #ff98a2;
+}
+
+.title-contact {
+    color: #199b65;
+    align-self: center;
+    //box-shadow: 0 5px 2px -4px #e4b534;
+    width: 0%;
+    display: flex;
+    height: 55px;
+    justify-content: center;
+    animation-name: leftSlide;
+    animation-duration: 2.2s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+.title-contact h1 {
+    position: fixed;
+}
+
+@keyframes leftSlide {
+    100% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.5;
+    }
+    0% {
+        opacity: 0.1;
+    }
 }

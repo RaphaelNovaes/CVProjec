@@ -1,5 +1,5 @@
 <x-mail::message>
-# Laravel Contact Request App
+# RN Resume Contact Request
 
 New message from {{ $contactData['name'] }} ({{ $contactData['email'] }}).
 

@@ -1,8 +1,8 @@
 <div
-  class="d-flex bg-dark flex-dmd-column flex-md-row align-items-dmd-center"
+  class="d-flex flex-dmd-column flex-md-row align-items-dmd-center flex-wrap bg-dark"
   style="
     min-height: 100vh;
-    background-image: url('/assets/images/introduction-bg.png');
+    background-image: url('assets/images/introduction-bg.png');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -10,22 +10,39 @@
   "
 >
   <div
-    class="d-sm-flex position-dmd-none w-dmd-100 float-md-end position-absolute photo "
-  ></div>
-  <div
-    class="d-sm-flex position-dxl-none ms-dmd-0 ms-dxl-50 float-md-end position-absolute description"
+    class="d-flex justify-content-center"
+    style="width: 50%; height: 70vh; min-height: 200px; min-width: 200px"
   >
-    <pre
-      [innerHTML]="typeWriterContent"
-      [class.cursor-blinking]="cursorOn"
-    ></pre>
+    <div class="photo"></div>
   </div>
-  <div class="d-sm-flex position-dmd-none position-absolute main-title">
-    <p class="text-white" style="font-size: 30px; font-weight: 400">
-      <span style="color: white">Hello</span>, I'm
-      <span style="color: #e4b534">Raphael Novaes</span>,
-      <span style="color: white">Back-end Developer</span>, based in Los
-      Angeles, CA
-    </p>
+
+  <div class="d-flex flex-column w-dmd-100 al-dmd-center" style="width: 50%">
+    <div class="d-flex flex-column intro intro-dmd">
+      <pre
+        class="fs-dmd-intro"
+        [innerHTML]="mainInnerHtml"
+        [class.cursor-blinking]="cursorOn"
+        style="margin-bottom: 0px"
+      ></pre>
+      <span
+        style="
+          color: #e3d424;
+          position: relative;
+          max-width: 300px;
+          bottom: 28px;
+          left: 5%;
+          align-self: center;
+        "
+        >{{ tempInnerHtml }}</span
+      >
+    </div>
+
+    <div class="d-flex main-title main-title-dmd title-animation">
+      <p>
+        Hello, I'm
+        <span style="color: #e4b534">Raphael Novaes</span>, Back-end Developer,
+        based in Los Angeles, CA
+      </p>
+    </div>
   </div>
 </div>

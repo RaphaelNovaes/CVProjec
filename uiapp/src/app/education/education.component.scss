@@ -1,1 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+.title-animation {
+    word-wrap: break-word;
+    animation-name: leftSlide;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes leftSlide {
+    100% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.5;
+    }
+    0% {
+        opacity: 0.1;
+    }
+}

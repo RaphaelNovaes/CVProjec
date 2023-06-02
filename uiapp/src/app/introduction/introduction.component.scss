@@ -5,22 +5,20 @@
 @import "bootstrap/scss/utilities";
 
 .photo {
-  background-image: url("http://127.0.0.1:8000/images/perfil.png");
+  background-image: url("https://api.rnresume.info/images/perfil.png");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #000;
   -webkit-clip-path: polygon(19% -13%, 85% 21%, -18% 202%, 30% 22%);
   clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
-  animation-name: polygons;
+  animation-name: leftSlidePolyg;
   animation-duration: 0.9s;
   animation-timing-function: ease;
   animation-iteration-count: 1;
   animation-direction: normal;
   animation-fill-mode: both;
-  min-height: 80vh;
-  top: 10vh;
-  width: 50%;
+  width: 100%;
 }
 
 .cursor-blinking::after {
@@ -30,73 +28,84 @@
   background: #fff;
   display: inline-block;
   animation: cursor-blink-kf 1.5s steps(2) infinite;
-  position: relative!important;
+  position: relative !important;
   right: auto;
   top: 5px;
 }
 
 .main-title {
-  z-index: 2;
-  top: 74%;
-  left: 35%;
-  max-width: 60%;
-  animation-name: mtitle;
-  animation-duration: 2.1s;
+  height: fit-content;
+  position: relative;
+  left: -12vh;
+  top: 15vh;
+  font-size: 4.6vmin;
+  font-weight: 400;
+  color: #fff;
+}
+
+.title-animation {
+  word-wrap: break-word;
+  animation-name: leftSlide;
+  animation-duration: 2s;
   animation-iteration-count: 1;
-  animation-direction: reverse;
-  animation-fill-mode: both;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
 }
 
-.description {
-  z-index: 2;
-  left: 70%;
-  top: 20%;
+.intro {
+  width: 100%;
+  height: fit-content;
+  min-height: 40%;
+  position: relative;
+  margin-top: 30px;
+  align-content: space-around;
+  flex-wrap: wrap;
 }
 
-.description pre  {
-  max-width: 345px;
-  overflow-x: hidden;
+.intro pre {
+  width: 65%;
+  max-width: 65%;
+  overflow: hidden;
   align-items: center;
   color: rgb(139, 137, 137);
-  font-size: medium;
-}
-
-
-
-@include media-breakpoint-up(md) {
-  .ms-md-200 {
-    margin-left: -200px !important;
-  }
-  .mb-md-200 {
-    margin-bottom: 200px !important;
-  }
-}
-
-@include media-breakpoint-down(xl) {
-  .ms-dxl-50 {
-    margin-left: 50% !important;
-  }
-  .position-dxl-none {
-    position: unset !important;
-  }
+  font-size: 2vmin;
 }
 
 @include media-breakpoint-down(md) {
-  .w-dmd-100 {
-    width: 100% !important;
-  }
   .flex-dmd-column {
     flex-direction: column !important;
-  }
-  .position-dmd-none {
-    position: unset !important;
-  }
-  .ms-dmd-0 {
-    margin-left: 0 !important;
   }
 
   .align-items-dmd-center {
     align-items: center !important;
+  }
+
+  .justify-content-dmd-center {
+    justify-content: center !important;
+  }
+
+  .main-title-dmd {
+    position: unset !important;
+    margin-top: 25px !important;
+    max-width: 70% !important;
+    font-size: 1.4rem !important;
+  }
+
+  .w-dmd-100 {
+    width: 100% !important;
+  }
+
+  .fs-dmd-intro {
+    font-size: 0.9rem !important;
+  }
+
+  .al-dmd-center {
+    align-items: center !important;
+  }
+
+  .intro-dmd {
+    min-height: 337px;
   }
 }
 
@@ -106,14 +115,21 @@
   }
 }
 
-@keyframes polygons {
+@keyframes leftSlidePolyg {
   100% {
     clip-path: polygon(19% -13%, 85% 21%, -18% 202%, 30% 22%);
   }
 }
 
-@keyframes mtitle {
+@keyframes leftSlide {
   100% {
-    left: -80%;
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  0% {
+    margin-left: -100%;
+    opacity: 0.1;
   }
 }

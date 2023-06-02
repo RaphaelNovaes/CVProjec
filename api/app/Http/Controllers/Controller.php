@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactRequest;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-    protected $contactData;
+    private $contactData;
 
     public function __construct(Request $request){
         $this->contactData = $request->all();
@@ -25,18 +25,20 @@ class Controller extends BaseController
         try {
             $this->sendEmail();      
         } catch (\Throwable $th) {
-            Log::debug(json_encode($th));
+            Log::error(json_encode($th));
             return response(['error' => true], 500)->header('Content-Type', 'application/json');    
         }
         return response(['succsses' => true], 200)->header('Content-Type', 'application/json');
     }
     public function sendEmail()
     {
-        Mail::to(env('MAIL_ALWAYS_TO'))->send(new ContactRequest($this->contactData));
+        $to = config('mail.mailers.smtp.always_to') ?: env('MAIL_ALWAYS_TO');
+        Mail::to($to)->send(new ContactRequest($this->contactData));
         $this->storeLog();
     }
-    public function storeLog()
+    public function storeLog($data = null)
     {
-        Log::debug(json_encode($this->contactData));
+        $data = $data ?: $this->contactData;
+        Log::debug(json_encode($data));
     }
 }
