@@ -7,6 +7,7 @@ import { DataService } from '../data.service';
   styleUrls: ['./education.component.scss'],
 })
 export class EducationComponent implements OnInit {
+
   education:
     | (
         | string[][]
@@ -15,6 +16,7 @@ export class EducationComponent implements OnInit {
           }[]
       )[]
     | any;
+  closePage = false;
 
   constructor(private dataService: DataService) {}
 

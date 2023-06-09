@@ -7,6 +7,7 @@
 @import "bootstrap/scss/utilities";
 
 .contact-link {
+    color: #ffffffb5;
     ::ng-deep {
         a {
             text-decoration: none;
@@ -17,6 +18,13 @@
             text-decoration: underline;
             text-underline-offset: 8px;
             text-decoration-thickness: 2px;
+        }
+        h2,
+        h3,
+        h4 {
+            color: #bfbfbf !important;
+            width: fit-content;
+            font-weight: 600;
         }
     }
 }
@@ -98,7 +106,7 @@
 @include media-breakpoint-down(md) {
     .mylinks-container-dmd {
         float: unset;
-        position:unset;
+        position: unset;
     }
 
     .mylinks-text-dmd {

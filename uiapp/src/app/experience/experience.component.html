@@ -1,14 +1,14 @@
 <div
   class="conteiner-fluid bg-dark"
   style="
-    min-height: 100vh;
+    min-height: calc(100vh - 116px);
     background-image: url('assets/images/experience-bg.png');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
     color: rgba(255, 255, 255, 0.9);
     padding-top: 2%;
   "
@@ -16,7 +16,7 @@
   <div class="d-flex flex-column align-items-center">
     <h1
       class="title-animation"
-      style="width: 70vw; color: #06bb66; text-align: start; margin-bottom: 2%"
+      style="width: 60vw; color: #06bb66; text-align: start; margin-bottom: 2%"
     >
       <span style="color: #a152a1db">export </span>
       <span style="color: #35597e">class</span> Experience {{ "{}" }}
@@ -27,12 +27,13 @@
     <div
       class="contact-link pb-2"
       style="
-        width: 70vw;
+        width: 60vw;
         text-align: justify;
         align-self: center;
         padding: 18px;
         background-color: #6c6c6c33;
         box-shadow: 1px 1px 8px 1px #54545473 inset;
+        border-radius: 20px;
       "
       [innerHTML]="experience"
     ></div>

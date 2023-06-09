@@ -1,13 +1,14 @@
 <div
-  class="conteiner-fluid bg-dark text-white"
+  class="conteiner-fluid bg-dark"
   style="
-    min-height: 100vh;
+    min-height: calc(100vh - 116px);
     background-image: url('assets/images/contactme-bg.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgba(255, 255, 255, 0.9);
   "
 >
   <div
@@ -23,7 +24,7 @@
   <div class="d-flex flex-column align-items-center">
     <form
       [formGroup]="contactForm"
-      style="width: 50%"
+      style="width: 50%;max-width:700px;"
       (ngSubmit)="subContactForm()"
     >
       <div class="mb-3">

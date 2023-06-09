@@ -12,7 +12,7 @@
   background-color: #000;
   -webkit-clip-path: polygon(19% -13%, 85% 21%, -18% 202%, 30% 22%);
   clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
-  animation-name: leftSlidePolyg;
+  animation-name: leftSlidePhoto;
   animation-duration: 0.9s;
   animation-timing-function: ease;
   animation-iteration-count: 1;
@@ -23,30 +23,40 @@
 
 .cursor-blinking::after {
   content: "";
-  width: 5px;
+  width: 3px;
   height: 17px;
   background: #fff;
   display: inline-block;
   animation: cursor-blink-kf 1.5s steps(2) infinite;
   position: relative !important;
   right: auto;
-  top: 5px;
+  top: 2px;
 }
 
 .main-title {
-  height: fit-content;
+  width: 100%;
   position: relative;
-  left: -12vh;
-  top: 15vh;
-  font-size: 4.6vmin;
+  left: -10%;
+  font-size: 2vw;
   font-weight: 400;
   color: #fff;
+  align-items: center;
+
 }
 
 .title-animation {
   word-wrap: break-word;
-  animation-name: leftSlide;
-  animation-duration: 2s;
+  animation-name: leftSlideTitle;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.commandLineAnimation {
+  animation-name: smoothCommandLine;
+  animation-duration: 0.1s;
   animation-iteration-count: 1;
   animation-direction: normal;
   animation-fill-mode: forwards;
@@ -55,21 +65,20 @@
 
 .intro {
   width: 100%;
-  height: fit-content;
-  min-height: 40%;
+  min-height: 80%;
   position: relative;
-  margin-top: 30px;
   align-content: space-around;
   flex-wrap: wrap;
 }
 
 .intro pre {
-  width: 65%;
-  max-width: 65%;
+  width: 78%;
+  max-width: 370px;
   overflow: hidden;
   align-items: center;
   color: rgb(139, 137, 137);
-  font-size: 2vmin;
+  font-size: 14px;
+  padding-top: 8%;
 }
 
 @include media-breakpoint-down(md) {
@@ -77,19 +86,33 @@
     flex-direction: column !important;
   }
 
-  .align-items-dmd-center {
-    align-items: center !important;
+  .photo-dmd {
+    width: 100%;
+    align-self: center;
+    min-height: 50vh!important;
   }
 
-  .justify-content-dmd-center {
-    justify-content: center !important;
+  .intro-dmd {
+    align-items: center;
+    align-content: unset;
+    min-height: 337px;
+  }
+  
+  .commandLine-dmd {
+    width: 100%!important;
+    bottom: 50%!important;
   }
 
   .main-title-dmd {
-    position: unset !important;
-    margin-top: 25px !important;
-    max-width: 70% !important;
+    width: 70% !important;
+    margin-top: 40px !important;
+    margin-bottom: 20px !important;
     font-size: 1.4rem !important;
+    position:unset ;
+  }
+  
+  .justify-content-dmd-center {
+    justify-content: center !important;
   }
 
   .w-dmd-100 {
@@ -104,9 +127,6 @@
     align-items: center !important;
   }
 
-  .intro-dmd {
-    min-height: 337px;
-  }
 }
 
 @keyframes cursor-blink-kf {
@@ -115,13 +135,13 @@
   }
 }
 
-@keyframes leftSlidePolyg {
+@keyframes leftSlidePhoto {
   100% {
     clip-path: polygon(19% -13%, 85% 21%, -18% 202%, 30% 22%);
   }
 }
 
-@keyframes leftSlide {
+@keyframes leftSlideTitle {
   100% {
     opacity: 1;
   }
@@ -131,5 +151,15 @@
   0% {
     margin-left: -100%;
     opacity: 0.1;
+  }
+}
+
+@keyframes smoothCommandLine {
+  100% {
+    opacity: 1;
+  }
+  0% {
+    margin-top: 0px;
+    opacity: 0;
   }
 }

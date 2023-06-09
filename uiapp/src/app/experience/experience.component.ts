@@ -33,7 +33,7 @@ export class ExperienceComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.routerLinkSet('#contpg');
-    this.routerScrollSet('#mylink');
+    //this.routerScrollSet('#mylink');
   }
 
   routerScrollSet(elementId: string){

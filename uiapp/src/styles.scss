@@ -1,14 +1,18 @@
 html,
-body,
-app-root {
-    height: 100vh;
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding-top: 38px;
     background-color: black;
     scroll-behavior: smooth;
 }
 
+
 :root {
     --bs-dark-rgb: 0, 0, 0 !important;
 }
+
 
 //Debug CSS
 // * {
