@@ -16,8 +16,8 @@ jobs:
       with:
         php-version: '8.0'
     - uses: actions/checkout@v3
-    - name: Go to api filder
-      run: cd ./api
+    - name: Go to api folder
+      uses: ./api
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
